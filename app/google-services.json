@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "533276225681",
+    "project_id": "fir-phoneauth-60776",
+    "storage_bucket": "fir-phoneauth-60776.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533276225681:android:d0f675a943d67421a8cf30",
+        "android_client_info": {
+          "package_name": "com.prantomondal.firebasephoneauthentication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "533276225681-6fq0l02btot09kmum8l35iv3qe4b9ek8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.prantomondal.firebasephoneauthentication",
+            "certificate_hash": "4f36e4a11008468db12d02b4e0affe5937dfc703"
+          }
+        },
+        {
+          "client_id": "533276225681-ph9sinocs4omboknjbvd6ll5e524gkla.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm5VoRewXWEZShBixUSqWEKWQMgptom6w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "533276225681-ph9sinocs4omboknjbvd6ll5e524gkla.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
