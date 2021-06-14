@@ -17,11 +17,92 @@
         android:layout_marginTop="20dp"
         android:src="@drawable/ic_baseline_phone_android_24"/>
     <LinearLayout
-        android:id="@+id/Ll"
+        android:id="@+id/phoneLl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
-        
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
 
+        <TextView
+            style="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Phone Number"
+            android:textAlignment="center"
+            android:textColor="#000"/>
+        <TextView
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please Enter Your Phone Number to continue"
+            android:textAlignment="center"
+            android:textColor="#777777"/>
+        <EditText
+            android:id="@+id/phoneEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#fff"
+            android:hint="+88xxxxxxxxxxx"
+            android:inputType="phone"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textColorHint="#c5c5c5"/>
+        <Button
+            android:id="@+id/phoneContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:text="Continue"/>
+</LinearLayout>
+    <!--For OTP/Verification code-->
+    <LinearLayout
+        android:id="@+id/codeLl"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
+        <TextView
+            style="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Verification Code"
+            android:textAlignment="center"
+            android:textColor="#000"/>
+        <TextView
+        <!--12.50-->
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please Enter the verification code"
+            android:textAlignment="center"
+            android:textColor="#777777"/>
+        <EditText
+            android:id="@+id/phoneEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#fff"
+            android:hint="+88xxxxxxxxxxx"
+            android:inputType="phone"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textColorHint="#c5c5c5"/>
+        <Button
+            android:id="@+id/phoneContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:text="Continue"/>
+
+    </LinearLayout>
+    
+    
 </LinearLayout>
