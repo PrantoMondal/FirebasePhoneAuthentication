@@ -75,7 +75,7 @@
             android:textAlignment="center"
             android:textColor="#000"/>
         <TextView
-        <!--12.50-->
+            android:id="@+id/codeSentDescription"
             style="@style/TextAppearance.MaterialComponents.Caption"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -83,7 +83,7 @@
             android:textAlignment="center"
             android:textColor="#777777"/>
         <EditText
-            android:id="@+id/phoneEt"
+            android:id="@+id/codeEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -94,13 +94,23 @@
             android:textAlignment="center"
             android:textColor="#000"
             android:textColorHint="#c5c5c5"/>
+        <TextView
+            android:id="@+id/resendCodeTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:textColor="#777777"
+            android:text="@string/didn_t_get_otp_resend"/>
+
         <Button
-            android:id="@+id/phoneContinue"
+            android:id="@+id/codeSubmitBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="5dp"
-            android:text="Continue"/>
+            android:text="Submit"/>
 
     </LinearLayout>
     
