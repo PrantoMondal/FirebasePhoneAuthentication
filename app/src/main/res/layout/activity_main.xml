@@ -51,7 +51,7 @@
             android:textColor="#000"
             android:textColorHint="#c5c5c5"/>
         <Button
-            android:id="@+id/phoneContinue"
+            android:id="@+id/phoneContinueBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
