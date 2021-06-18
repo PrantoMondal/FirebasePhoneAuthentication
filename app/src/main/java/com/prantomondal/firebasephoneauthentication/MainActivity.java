@@ -147,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startPhoneNumberVerification(String phone) {
-        pd.setMessage("Verifying phone umber");
+        pd.setMessage("Verifying phone number");
         pd.show();
 
         PhoneAuthOptions options =
