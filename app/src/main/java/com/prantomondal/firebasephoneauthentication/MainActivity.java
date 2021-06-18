@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 //verified without needing to send or enter a verification code
                 // 2 - Auto retrieval On some devices Google play service can automatically
                 // detect the incoming verification SMS and perform verification without user action
+                signInWithPhoneAuthCredential(phoneAuthCredential);
 
             }
 
@@ -74,15 +76,31 @@ public class MainActivity extends AppCompatActivity {
             public void onVerificationFailed(@NonNull FirebaseException e) {
                 //This callback is invoked an invalid request for verification is made
                 //for instance if the phone number format is not valid...
+                pd.dismiss();
+                Toast.makeText(MainActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+
 
             }
 
             @Override
-            public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-                super.onCodeSent(s, forceResendingToken);
+            public void onCodeSent(@NonNull String verificationId, @NonNull PhoneAuthProvider.ForceResendingToken token) {
+                super.onCodeSent(verificationId, forceResendingToken);
                 //The SMS verification code has been sent to the provided phone number,we
                 //now need to ask the user to enter the code and then construct a credential
                 //by combining the code with a verification ID.
+                Log.d(TAG, "onCodeSent: "+ verificationId);
+                mVerificationId = verificationId;
+                forceResendingToken = token;
+                pd.dismiss();
+
+                //hide phone layout show code layout
+                binding.phoneLl.setVisibility(View.GONE);
+                binding.codeLl.setVisibility(View.VISIBLE);
+
+                Toast.makeText(MainActivity.this, "Verification code sent...", Toast.LENGTH_SHORT).show();
+
+
+                binding.codeSentDescription.setText("Please type the verification code we sent \nto"+ binding.phoneEt.getText().toString().trim());
             }
         };
 
@@ -175,14 +193,20 @@ public class MainActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-
+                        //successfully signed in
+                        pd.dismiss();
+                        String phone = firebaseAuth.getCurrentUser().getPhoneNumber();
+                        Toast.makeText(MainActivity.this, "Logged in as"+phone, Toast.LENGTH_SHORT).show();
+                    //Start profile activity
                     }
                 })
 
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        
+                        //failed signing in
+                        pd.dismiss();
+                        Toast.makeText(MainActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }
