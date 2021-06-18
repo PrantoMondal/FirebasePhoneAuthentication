@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -22,7 +23,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import com.prantomondal.firebasephoneauthentication.databinding.ActivityMainBinding;
 
 import java.util.concurrent.TimeUnit;
-//.....................................27.48.....................................
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -198,6 +199,7 @@ public class MainActivity extends AppCompatActivity {
                         String phone = firebaseAuth.getCurrentUser().getPhoneNumber();
                         Toast.makeText(MainActivity.this, "Logged in as"+phone, Toast.LENGTH_SHORT).show();
                     //Start profile activity
+                        startActivity(new Intent(MainActivity.this,ProfileActivity.class));
                     }
                 })
 
